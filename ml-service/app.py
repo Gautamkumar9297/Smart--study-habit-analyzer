@@ -8,8 +8,14 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the trained model
-model_path = os.path.join(os.path.dirname(__file__), '..', 'study_model.pkl')
+# Try to load from ml-service folder first, then fall back to parent directory
+model_path = os.path.join(os.path.dirname(__file__), 'study_model.pkl')
+if not os.path.exists(model_path):
+    # Fall back to parent directory (for backward compatibility)
+    model_path = os.path.join(os.path.dirname(__file__), '..', 'study_model.pkl')
+
 model = joblib.load(model_path)
+print(f"✅ Model loaded successfully from: {model_path}")
 
 @app.route('/predict', methods=['POST'])
 def predict():
