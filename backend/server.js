@@ -21,7 +21,7 @@ const io = new Server(server, {
     cors: {
         origin: [
             "http://localhost:3000",
-            "https://statuesque-frangollo-3458e1.netlify.app"
+            "https://smart-study-habit-analyzer-frontend.onrender.com"
         ],
         methods: ["GET", "POST"],
         credentials: true
@@ -37,7 +37,7 @@ connectDB();
 app.use(cors({
     origin: [
         'http://localhost:3000',
-        'https://statuesque-frangollo-3458e1.netlify.app'
+        'https://smart-study-habit-analyzer-frontend.onrender.com'
     ],
     credentials: true
 }));
