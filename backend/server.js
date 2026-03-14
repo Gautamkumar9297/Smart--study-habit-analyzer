@@ -15,10 +15,16 @@ const { handleChatMessage } = require('./controllers/chatController');
 
 const app = express();
 const server = http.createServer(app);
+
+// Updated Socket.IO with production CORS
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000",
-        methods: ["GET", "POST"]
+        origin: [
+            "http://localhost:3000",
+            "https://statuesque-frangollo-3458e1.netlify.app"
+        ],
+        methods: ["GET", "POST"],
+        credentials: true
     }
 });
 
@@ -27,8 +33,14 @@ const PORT = process.env.PORT || 5001;
 // Connect to MongoDB
 connectDB();
 
-// Middleware
-app.use(cors());
+// Updated Middleware with production CORS
+app.use(cors({
+    origin: [
+        'http://localhost:3000',
+        'https://statuesque-frangollo-3458e1.netlify.app'
+    ],
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -56,10 +68,8 @@ io.on('connection', (socket) => {
 
     socket.on('chatMessage', async (data) => {
         console.log('📩 Message received:', data);
-
         // Get bot response from Gemini API
         const botResponse = await handleChatMessage(data.message, data.user);
-
         // Send bot response back to client
         socket.emit('botResponse', botResponse);
     });
