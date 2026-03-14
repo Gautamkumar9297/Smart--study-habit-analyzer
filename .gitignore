@@ -1,0 +1,150 @@
+# ===================================
+# Environment Variables (IMPORTANT!)
+# ===================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Keep .env.example files
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+!ml-service/.env.example
+
+# ===================================
+# Node.js / NPM
+# ===================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ===================================
+# Python / Flask
+# ===================================
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+*.pyo
+*.pyd
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ===================================
+# React / Build Files
+# ===================================
+build/
+dist/
+*.tsbuildinfo
+
+# ===================================
+# IDE / Editor Files
+# ===================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# ===================================
+# OS Files
+# ===================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ===================================
+# Logs
+# ===================================
+*.log
+logs/
+
+# ===================================
+# Testing
+# ===================================
+coverage/
+.nyc_output/
+*.lcov
+.coverage
+.pytest_cache/
+htmlcov/
+
+# ===================================
+# Test Files (Exclude test scripts)
+# ===================================
+test-*.ps1
+test-*.js
+test-*.html
+example-*.json
+
+# ===================================
+# Temporary Files
+# ===================================
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# ===================================
+# Database Files (if any)
+# ===================================
+*.sqlite
+*.sqlite3
+*.db
+
+# ===================================
+# Certificates & Keys
+# ===================================
+*.pem
+*.key
+*.cert
+*.crt
+
+# ===================================
+# Development Documentation (Exclude)
+# ===================================
+ANALYTICS_PREDICTION_IMPLEMENTATION.md
+CHATBOT_SETUP.md
+COUNSELOR_NAME_IMPLEMENTATION.md
+CSV_UPLOAD_GUIDE.md
+DEBUG_UPLOAD.md
+DIAGNOSE_UPLOAD_ISSUE.md
+EXCEL_TO_ANALYTICS_IMPLEMENTATION.md
+FINAL_UPLOAD_GUIDE.md
+IMPLEMENTATION_SUMMARY.md
+ISSUE_FIXED.md
+MENTAL_HEALTH_ASSESSMENT.md
+NEW_STUDENT_FLOW.md
+PERFORMANCE_OPTIMIZATION.md
+PERFORMANCE_OPTIMIZATIONS.md
+PREDICTION_PERSISTENCE_FIX.md
+QUICK_START_GUIDE.md
+STUDENT_RECORDS_FIXED.md
+SYSTEM_ARCHITECTURE.md
+TEST_LOGIN.md
+UPLOAD_FIX_SUMMARY.md
+UPLOAD_NOT_WORKING_FIX.md
+UPLOAD_TROUBLESHOOTING.md
+DEPLOYMENT_CHECKLIST.md
+GITHUB_DEPLOYMENT_SUMMARY.md
+COMPLETE_SYSTEM_OVERVIEW.md
