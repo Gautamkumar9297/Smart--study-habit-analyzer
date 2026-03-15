@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import axios from "axios";
 import { MessageCircle, Send, X } from "lucide-react";
 
-const socket = io("http://localhost:5001");
+const socket = io("https://smart-study-habit-analyzer-1.onrender.com");
 
 const ChatBox = () => {
     const [message, setMessage] = useState("");
@@ -37,7 +37,7 @@ const ChatBox = () => {
     // Load previous chat
     const loadChat = () => {
         axios
-            .get("http://localhost:5001/api/chats")
+            .get("https://smart-study-habit-analyzer-1.onrender.com/api/chats")
             .then((res) => setChat(res.data))
             .catch((err) => console.error("Chat load error:", err));
     };
@@ -73,7 +73,7 @@ const ChatBox = () => {
         socket.emit("endChat");
 
         // Clear chat from database
-        axios.delete("http://localhost:5001/api/chats")
+        axios.delete("https://smart-study-habit-analyzer-1.onrender.com/api/chats")
             .catch((err) => console.error("Error clearing chats:", err));
     };
 
